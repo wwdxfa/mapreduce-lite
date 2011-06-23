@@ -12,6 +12,7 @@
   * [http://code.google.com/p/protobuf/ Google Protocol Buffers] is used for inter-worker communication and disk storage.
   * [http://code.google.com/p/google-gflags/ GFlags] is used to parse command line options.
   * [http://code.google.com/p/googletest/ Google Test] is used to write and run unit tests.
+  * [http://www.boost.org/ Boost] helps developing multi-threading in asynchronous inter-worker communication and provides cross-platform filesystem support.  
 
 = Details =
 
@@ -70,4 +71,17 @@ cd gtest-1.5.0
 ./configure --prefix=/home/you/3rd-party/gtest-1.5.0
 make && make install
 ln -s /home/you/3rd-party/gtest-1.5.0 /home/you/3rd-party/gtest
+}}}
+
+
+== Install Boost ==
+    It is OK to install Boost from pre-built package.
+    # For Cygwin, run `setup.exe` and select `libboost`
+    # For Debian/Ubuntu Linux
+{{{
+sudo apt-get install libboost-dev
+}}}
+    # For Mac OS X, use Howebew to install Boost:
+{{{
+brew install libboost-dev
 }}}
