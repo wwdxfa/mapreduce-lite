@@ -81,5 +81,5 @@ tar xjf boost_1_44_1.tar.bz2
 cd boost_1_44_1
 ./bootstrap --prefix=/home/you/3rd-party/boost-1.44
 ./bjam install
-ln -s /home/you/3rd-party/boost-1.44 /home/you/3rd-party/boost-1.44
+ln -s /home/you/3rd-party/boost-1.44 /home/you/3rd-party/boost
 }}}
