@@ -17,12 +17,12 @@
 = Details =
 
 == Install GCC ==
-    # For Cygwin, run `setup.exe` and select `gcc` and `binutils`
-    # For Debian/Ubuntu Linux
+    # On Cygwin, run `setup.exe` and select `gcc` and `binutils`
+    # On Debian/Ubuntu Linux
 {{{
 sudo apt-get install gcc binutils
 }}}
-    # For Mac OS X, install XCode
+    # On Mac OS X, install XCode
 
 == Install CMake ==
     It is OK to install CMake in from binary package.
@@ -75,13 +75,11 @@ ln -s /home/you/3rd-party/gtest-1.5.0 /home/you/3rd-party/gtest
 
 
 == Install Boost ==
-    It is OK to install Boost from pre-built package.
-    # For Cygwin, run `setup.exe` and select `libboost`
-    # For Debian/Ubuntu Linux
+    We need a recent version of Boost.  Download the source package from http://www.boost.org/users/download/, and
 {{{
-sudo apt-get install libboost-dev
-}}}
-    # For Mac OS X, use Howebew to install Boost:
-{{{
-brew install libboost-dev
+tar xjf boost_1_44_1.tar.bz2
+cd boost_1_44_1
+./bootstrap --prefix=/home/you/3rd-party/boost-1.44
+./bjam install
+ln -s /home/you/3rd-party/boost-1.44 /home/you/3rd-party/boost-1.44
 }}}
