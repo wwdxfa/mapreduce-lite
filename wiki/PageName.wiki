@@ -1,0 +1,19 @@
+#Build MapReduce Lite
+
+<font color=red>This page is under construction.</font>
+
+= Introduction =
+
+MapReduce Lite can be built and run on Linux, MacOS X and Cygwin.
+
+= Dependencies =
+
+  * CMake: MapReduce Lite is built using CMake (http://www.cmake.org).
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
