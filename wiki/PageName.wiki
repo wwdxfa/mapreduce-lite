@@ -4,16 +4,21 @@
 
 = Introduction =
 
-MapReduce Lite can be built and run on Linux, MacOS X and Cygwin.
+!MapReduce Lite can be built and run on Linux, MacOS X and Cygwin.
 
 = Dependencies =
 
-  * CMake: MapReduce Lite is built using CMake (http://www.cmake.org).
-
+  * CMake: !MapReduce Lite is built using CMake (http://www.cmake.org).
+  * Protobuf: 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Install Protobuf
+    # Download source code package (I am using `protobuf-2.3.0.tar.bz2`) from http://code.google.com/p/protobuf
+    # Unpack the source code anywhere (e.g., `./protobuf-2.3.0`)
+    # You need to install protobuf into the standard path, e.g., `/usr/local`, because we need CMake be able to find the protobuf compiler:
+{{{
+cd protobuf-2.3.0
+./configure
+make && make install
+}}}
