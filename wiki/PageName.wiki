@@ -8,12 +8,37 @@
 
 = Dependencies =
 
+  * GNU compiler collection (GCC)
   * CMake: !MapReduce Lite is built using CMake (http://www.cmake.org).
   * Protobuf: 
 
 = Details =
 
-  * Install Protobuf
+== Install GCC ==
+    # For Cygwin, run `setup.exe` and select `gcc`
+    # For Debian/Ubuntu Linux
+{{{
+sudo apt-get install gcc
+}}}
+    # For Mac OS X, install XCode
+
+== Install CMake ==
+    It is OK to install CMake in from binary package.
+    # For Cygwin, run `setup.exe` and select `cmake`
+    # For Debian/Ubuntu Linux
+{{{
+sudo apt-get install cmake
+}}}
+    # For Mac OS X, install Homebrew
+{{{
+ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+}}}
+    and use Howebew to install CMake:
+{{{
+brew install cmake
+}}}
+
+== Install Protobuf ==
     # Download source code package (I am using `protobuf-2.3.0.tar.bz2`) from http://code.google.com/p/protobuf
     # Unpack the source code anywhere (e.g., `./protobuf-2.3.0`)
     # You need to install protobuf into the standard path, e.g., `/usr/local`, because we need CMake be able to find the protobuf compiler:
