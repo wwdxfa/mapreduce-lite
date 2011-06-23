@@ -1,6 +1,6 @@
 #Build MapReduce Lite
 
-<font color=red>This page is under construction.</font>
+<font color=red>This page is under construction and not yet finished.</font>
 
 = Introduction =
 
@@ -8,17 +8,17 @@
 
 = Dependencies =
 
-  * GNU compiler collection (GCC)
-  * CMake: !MapReduce Lite is built using CMake (http://www.cmake.org).
-  * Protobuf: 
+  * [http://www.cmake.org/ CMake] is used to manage and build the project.
+  * [http://code.google.com/p/protobuf/ Google Protocol Buffers] is used for inter-worker communication and disk storage.
+  * [http://code.google.com/p/google-gflags/ GFlags] is used to parse command line options.
 
 = Details =
 
 == Install GCC ==
-    # For Cygwin, run `setup.exe` and select `gcc`
+    # For Cygwin, run `setup.exe` and select `gcc` and `binutils`
     # For Debian/Ubuntu Linux
 {{{
-sudo apt-get install gcc
+sudo apt-get install gcc binutils
 }}}
     # For Mac OS X, install XCode
 
@@ -46,4 +46,15 @@ brew install cmake
 cd protobuf-2.3.0
 ./configure
 make && make install
+}}}
+
+== Install GFlags ==
+    # Download the source code package from http://code.google.com/p/google-gflags/
+    # Unpack the source code anywhere (e.g., `./gflags-1.4`)
+    # You are free to install gflags anywhere (e.g., `/home/you/3rd-party/gflags`):
+{{{
+cd gflags-1.4
+./configure --prefix=/home/you/3rd-party/gflags-1.4
+make && make install
+ln -s /home/you/3rd-party/gflags-1.4 /home/you/3rd-party/gflags
 }}}
