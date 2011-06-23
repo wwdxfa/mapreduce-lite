@@ -11,6 +11,7 @@
   * [http://www.cmake.org/ CMake] is used to manage and build the project.
   * [http://code.google.com/p/protobuf/ Google Protocol Buffers] is used for inter-worker communication and disk storage.
   * [http://code.google.com/p/google-gflags/ GFlags] is used to parse command line options.
+  * [http://code.google.com/p/googletest/ Google Test] is used to write and run unit tests.
 
 = Details =
 
@@ -49,7 +50,7 @@ make && make install
 }}}
 
 == Install GFlags ==
-    # Download the source code package from http://code.google.com/p/google-gflags/
+    # Download the source code package (e.g., `gflags-1.4.tar.gz`) from http://code.google.com/p/google-gflags/
     # Unpack the source code anywhere (e.g., `./gflags-1.4`)
     # You are free to install gflags anywhere (e.g., `/home/you/3rd-party/gflags`):
 {{{
@@ -57,4 +58,16 @@ cd gflags-1.4
 ./configure --prefix=/home/you/3rd-party/gflags-1.4
 make && make install
 ln -s /home/you/3rd-party/gflags-1.4 /home/you/3rd-party/gflags
+}}}
+
+== Install !GoogleTest ==
+
+    # Download the source code package (e.g., `gtest-1.5.0.tar.bz2`) from http://code.google.com/p/googletest/.
+    # Unpack the source code anywhere (e.g., `./gtest-1.5.0`)
+    # You are free to install gflags anywhere (e.g., `/home/you/3rd-party/gtest`):
+{{{
+cd gtest-1.5.0
+./configure --prefix=/home/you/3rd-party/gtest-1.5.0
+make && make install
+ln -s /home/you/3rd-party/gtest-1.5.0 /home/you/3rd-party/gtest
 }}}
