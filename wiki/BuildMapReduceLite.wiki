@@ -1,4 +1,4 @@
-#Build MapReduce Lite
+#Build !MapReduce Lite
 
 <font color=red>This page is under construction and not yet finished.</font>
 
@@ -12,7 +12,7 @@
   * [http://code.google.com/p/protobuf/ Google Protocol Buffers] is used for inter-worker communication and disk storage.
   * [http://code.google.com/p/google-gflags/ GFlags] is used to parse command line options.
   * [http://code.google.com/p/googletest/ Google Test] is used to write and run unit tests.
-  * [http://www.boost.org/ Boost] helps developing multi-threading in asynchronous inter-worker communication and provides cross-platform filesystem support.  
+  * [http://www.boost.org/ Boost] helps developing multi-threading in asynchronous inter-worker communication and provides cross-platform filesystem support.
 
 = Details =
 
@@ -31,14 +31,20 @@ sudo apt-get install gcc binutils
 {{{
 sudo apt-get install cmake
 }}}
-    # For Mac OS X, install Homebrew
-{{{
-ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
-}}}
-    and use Howebew to install CMake:
+    # For Mac OS X, if you have [http://mxcl.github.com/homebrew/ Howebew], you can run
 {{{
 brew install cmake
 }}}
+    or if you have [http://www.macports.org/ MacPorts], run
+{{{
+sudo port install cmake
+}}}
+    If you have neither Homebrew nor !MacPorts, you are recommended to install Homebrew: (Homebrew depends on Ruby, which should have been installed with XCode.)
+{{{
+ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+}}}
+    If you have both Homebrew and !MacPorts, you are not lucky -- you definitely want to uninstall one of them, and I do not know how to do that cleanly.
+
 
 == Install Protobuf ==
     # Download source code package (I am using `protobuf-2.3.0.tar.bz2`) from http://code.google.com/p/protobuf
