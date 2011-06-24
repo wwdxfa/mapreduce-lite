@@ -22,8 +22,11 @@ sudo apt-get install gcc binutils
 }}}
     # On Mac OS X, install XCode
 
+
 == Install CMake ==
-    It is OK to install CMake in from binary package.
+It is OK to install CMake in from binary package. But please be aware that we need a version larger than 2.8.0, because we used Google protocol buffers in !MapReduce Lite and older versions of CMake does not support protocol buffers.
+
+To install CMake from binary packages using package managers:
     # For Cygwin, run `setup.exe` and select `cmake`
     # For Debian/Ubuntu Linux
 {{{
@@ -43,6 +46,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
 }}}
     If you have both Homebrew and !MacPorts, you are not lucky -- you definitely want to uninstall one of them, and I do not know how to do that cleanly.
 
+You can also download binary and source packages of CMake from: http://www.cmake.org/cmake/resources/software.html.
 
 == Install Protobuf ==
     # Download source code package (I am using `protobuf-2.3.0.tar.bz2`) from http://code.google.com/p/protobuf
