@@ -1,6 +1,6 @@
-#Build !MapReduce Lite
 
-<font color=red>This page is under construction and not yet finished.</font>
+
+<wiki:toc max_depth="2" />
 
 = Introduction =
 
