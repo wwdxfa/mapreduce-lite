@@ -17,10 +17,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-// This is a copy from
-//   http://tc-svn.tencent.com/setech/setech_infrastructure_rep/Infra_proj/
-//   trunk/src/common/system/concurrency/mutex.hpp
-//
 #ifndef SYSTEM_MUTEX_H_
 #define SYSTEM_MUTEX_H_
 
@@ -33,7 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # endif
 # define NOMINMAX 1
 # include <windows.h>
-#elif defined __unix__
+#elif defined __unix__ || defined __APPLE__
 # include <pthread.h>
 #else
 # error Unknown platform
@@ -71,7 +67,6 @@ class Mutex {
 
   void Lock() {
     ::EnterCriticalSection(&m_Mutex);
-    assert(IsLocked());
   }
 
   bool TryLock() {
@@ -79,15 +74,7 @@ class Mutex {
   }
 
   void Unlock() {
-    assert(IsLocked());
     ::LeaveCriticalSection(&m_Mutex);
-  }
-
-  bool IsLocked() const {
-    if (IsNewBehavior())  // after win2k3 sp1
-      return (m_Mutex.LockCount & 1) == 0;
-    else
-      return m_Mutex.LockCount >= 0;
   }
 
  private:
@@ -118,7 +105,7 @@ class Mutex {
   friend class Cond;
 };
 
-#elif defined __unix__
+#elif defined __unix__ || defined __APPLE__
 
 class Mutex {
  public:
@@ -146,7 +133,6 @@ class Mutex {
 
   void Lock() {
     CheckError("Mutex::Lock", pthread_mutex_lock(&m_Mutex));
-    assert(IsLocked());
   }
 
   bool TryLock() {
@@ -159,13 +145,7 @@ class Mutex {
     }
   }
 
-  // by inspect internal data
-  bool IsLocked() const {
-    return m_Mutex.__data.__lock > 0;
-  }
-
   void Unlock() {
-    assert(IsLocked());
     CheckError("Mutex::Unlock", pthread_mutex_unlock(&m_Mutex));
     // NOTE: can't check unlocked here, maybe already locked by
     // other thread
@@ -208,11 +188,6 @@ class NullMutex {
   bool TryLock() {
     m_locked = true;
     return true;
-  }
-
-  // by inspect internal data
-  bool IsLocked() const {
-    return m_locked;
   }
 
   void Unlock() {
