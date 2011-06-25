@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #define SYSTEM_CONDITION_VARIABLE_H_
 
 #ifndef _WIN32
-#if __unix__
+#if defined __unix__ || defined __APPLE__
 #include <pthread.h>
 #endif
 #endif
@@ -45,10 +45,10 @@ class ConditionVariable {
   void Wait(Mutex* inMutex);
 
  private:
-#ifdef _WIN32
+#if defined _WIN32
   HANDLE m_hCondition;
   unsigned int m_nWaitCount;
-#elif __unix__
+#elif defined __unix__ || defined __APPLE__
   pthread_cond_t m_hCondition;
 #endif
   static void CheckError(const char* context, int error);
