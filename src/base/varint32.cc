@@ -17,11 +17,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/base/varint32.h"
+#include "src/base/varint32.h"
 
 #include <stdio.h>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 #include "google/protobuf/io/coded_stream.h"
 
 namespace {

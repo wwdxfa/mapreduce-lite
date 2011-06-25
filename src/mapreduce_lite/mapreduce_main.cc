@@ -17,10 +17,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 #include "gflags/gflags.h"
-#include "paralgo/mapreduce_lite/flags.h"
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
+#include "src/mapreduce_lite/flags.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
 
 namespace mapreduce_lite {
 bool IAmMapWorker();

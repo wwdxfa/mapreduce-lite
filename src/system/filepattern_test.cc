@@ -22,8 +22,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <string>
 
 #include "gtest/gtest.h"
-#include "paralgo/strutil/stringprintf.h"
-#include "paralgo/system/filepattern.h"
+#include "src/strutil/stringprintf.h"
+#include "src/system/filepattern.h"
 
 static const int kNumTestFiles = 5;
 static const char* kTestFilebase = "/tmp/filepattern-test";

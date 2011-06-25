@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Author: Yi Wang (yiwang@tencent.com)
 //         Zhihui Jin (rickjin@tencent.com)
 //
-#include "paralgo/base/random.h"
+#include "src/base/random.h"
 
 #include <stdlib.h>
 #include <sys/time.h>

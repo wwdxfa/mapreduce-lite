@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #ifndef BASE_RANDOM_H_
 #define BASE_RANDOM_H_
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 #include "boost/random.hpp"
 
 // The RNG wrapper interface

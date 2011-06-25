@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //
 #include "gtest/gtest.h"
 
-#include "paralgo/strutil/strcodec.h"
+#include "src/strutil/strcodec.h"
 
 TEST(StrCodecTest, testFastCodecInt32) {
   std::string str;

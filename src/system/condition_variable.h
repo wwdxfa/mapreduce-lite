@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #endif
 
 #include <assert.h>
-#include "paralgo/system/mutex.h"
+#include "src/system/mutex.h"
 
 class ConditionVariable {
  public:

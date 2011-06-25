@@ -45,7 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <string>
 #include <stdexcept>
 
-#include "paralgo/system/scoped_locker.h"
+#include "src/system/scoped_locker.h"
 
 class ConditionVariable;
 

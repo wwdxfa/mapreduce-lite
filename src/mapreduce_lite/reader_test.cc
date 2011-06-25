@@ -14,9 +14,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 02110-1301, USA.
 */
-#include "paralgo/mapreduce_lite/reader.h"
+#include "src/mapreduce_lite/reader.h"
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 #include "gtest/gtest.h"
 
 namespace mapreduce_lite {

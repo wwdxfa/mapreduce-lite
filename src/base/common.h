@@ -38,7 +38,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gflags/gflags.h"
 
-#include "paralgo/base/logging.h"
+#include "src/base/logging.h"
 
 //-----------------------------------------------------------------------------
 //

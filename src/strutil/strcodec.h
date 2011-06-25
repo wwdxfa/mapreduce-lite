@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #define STRUTIL_STRCODEC_H_
 
 #include <string>
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 // Following functions encode numerical values in human-readable format.
 

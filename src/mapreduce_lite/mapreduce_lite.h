@@ -26,8 +26,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <sstream>
 #include <vector>
 
-#include "paralgo/base/class_register.h"
-#include "paralgo/sorted_buffer/sorted_buffer.h"
+#include "src/base/class_register.h"
+#include "src/sorted_buffer/sorted_buffer.h"
 
 namespace google {
 namespace protobuf {

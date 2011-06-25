@@ -27,7 +27,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #define COMMON_BASE_CLASS_REGISTER_HELPER_H_
 
 #include <string>
-#include "paralgo/base/class_register.h"
+#include "src/base/class_register.h"
 
 class Mapper {
  public:

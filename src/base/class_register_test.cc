@@ -18,9 +18,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Author: Yi Wang (yiwang@tencent.com)
 //         Hangjun Ye (hansye@tencent.com)
 
-#include "paralgo/base/class_register.h"
-#include "paralgo/base/class_register_test_helper.h"
-#include "paralgo/base/scoped_ptr.h"
+#include "src/base/class_register.h"
+#include "src/base/class_register_test_helper.h"
+#include "src/base/scoped_ptr.h"
 #include "gtest/gtest.h"
 
 

@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #ifndef BASE_VARINT32_H_
 #define BASE_VARINT32_H_
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 bool ReadVarint32(FILE* input, uint32* value);
 bool WriteVarint32(FILE* output, uint32 value);

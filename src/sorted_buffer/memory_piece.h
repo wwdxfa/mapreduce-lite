@@ -38,7 +38,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <functional>
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 namespace sorted_buffer {
 

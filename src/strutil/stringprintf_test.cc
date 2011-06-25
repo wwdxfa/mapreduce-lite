@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Lei Shen (leoshen@tencent.com)
 //
-#include "paralgo/strutil/stringprintf.h"
+#include "src/strutil/stringprintf.h"
 
 #include "gtest/gtest.h"
 

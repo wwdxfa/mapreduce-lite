@@ -24,8 +24,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gtest/gtest.h"
 
-#include "paralgo/base/common.h"
-#include "paralgo/hash/md5_hash.h"
+#include "src/base/common.h"
+#include "src/hash/md5_hash.h"
 
 TEST(MD5Test, AsGroundTruthOnWikipedia) {
   EXPECT_EQ(MD5Hash("The quick brown fox jumps over the lazy dog"),

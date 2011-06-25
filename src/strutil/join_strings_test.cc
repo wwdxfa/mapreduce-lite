@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/strutil/join_strings.h"
+#include "src/strutil/join_strings.h"
 
 #include <list>
 #include <set>

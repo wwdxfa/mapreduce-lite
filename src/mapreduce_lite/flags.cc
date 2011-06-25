@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Define flags used by map/reduce workers to accept instructions from
 // MapReduce Lite scheduler.
 //
-#include "paralgo/mapreduce_lite/flags.h"
+#include "src/mapreduce_lite/flags.h"
 
 #include <sys/utsname.h>                // For uname
 #include <time.h>
@@ -31,13 +31,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "boost/filesystem.hpp"
 
-#include "paralgo/base/common.h"
-#include "paralgo/base/scoped_ptr.h"
+#include "src/base/common.h"
+#include "src/base/scoped_ptr.h"
 #include "gflags/gflags.h"
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
-#include "paralgo/sorted_buffer/sorted_buffer.h"
-#include "paralgo/strutil/stringprintf.h"
-#include "paralgo/strutil/split_string.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
+#include "src/sorted_buffer/sorted_buffer.h"
+#include "src/strutil/stringprintf.h"
+#include "src/strutil/split_string.h"
 
 
 namespace mapreduce_lite {

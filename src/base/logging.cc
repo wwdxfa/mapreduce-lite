@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 
-#include "paralgo/base/logging.h"
+#include "src/base/logging.h"
 
 #include <stdlib.h>
 #include <time.h>

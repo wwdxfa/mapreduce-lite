@@ -17,13 +17,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2011 Tencent Inc.
 // Author: YAN Hao (charlieyan@tencent.com)
 
-#include "paralgo/mapreduce_lite/tcp_socket.h"
+#include "src/mapreduce_lite/tcp_socket.h"
 
 #include <string.h>
 #include <unistd.h>
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 #include "gtest/gtest.h"
 
 using std::string;

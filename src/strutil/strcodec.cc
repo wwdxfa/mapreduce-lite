@@ -22,9 +22,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <iomanip>
 #include <sstream>
 
-#include "paralgo/base/common.h"
-#include "paralgo/strutil/strcodec.h"
-#include "paralgo/strutil/stringprintf.h"
+#include "src/base/common.h"
+#include "src/strutil/strcodec.h"
+#include "src/strutil/stringprintf.h"
 
 // |XXXToKey| functions will generate a string with length
 // kNumericValueFillSize containing human readable format of a

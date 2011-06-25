@@ -19,10 +19,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //
 #include <algorithm>
 
-#include "paralgo/sorted_buffer/memory_piece.h"
+#include "src/sorted_buffer/memory_piece.h"
 
-#include "paralgo/base/common.h"
-#include "paralgo/base/varint32.h"
+#include "src/base/common.h"
+#include "src/base/varint32.h"
 
 namespace sorted_buffer {
 

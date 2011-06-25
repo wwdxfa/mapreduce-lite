@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <vector>
 
 #include "gflags/gflags.h"
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
 
 //-----------------------------------------------------------------------------
 // Most flags should be accessed using the following accessors.

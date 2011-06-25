@@ -17,13 +17,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 
-#include "paralgo/base/varint32.h"
+#include "src/base/varint32.h"
 
 #include <fstream>
 
 #include "gtest/gtest.h"
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 TEST(Varint32Test, WriteAndReadVarint32) {
   static const char* kTmpFile = "/tmp/varint32_test.tmp";

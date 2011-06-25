@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/sorted_buffer/memory_allocator.h"
+#include "src/sorted_buffer/memory_allocator.h"
 
 #include "gtest/gtest.h"
 

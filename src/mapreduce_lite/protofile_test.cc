@@ -22,9 +22,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gtest/gtest.h"
 
-#include "paralgo/base/common.h"
-#include "paralgo/mapreduce_lite/protofile.h"
-#include "paralgo/mapreduce_lite/protofile.pb.h"
+#include "src/base/common.h"
+#include "src/mapreduce_lite/protofile.h"
+#include "src/mapreduce_lite/protofile.pb.h"
 
 namespace mapreduce_lite {
 namespace protofile {

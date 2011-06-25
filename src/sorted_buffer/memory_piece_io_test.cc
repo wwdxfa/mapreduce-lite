@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gtest/gtest.h"
 
-#include "paralgo/sorted_buffer/memory_piece.h"
+#include "src/sorted_buffer/memory_piece.h"
 
 namespace sorted_buffer {
 

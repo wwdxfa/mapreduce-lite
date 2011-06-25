@@ -17,12 +17,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: YAN Hao (charlieyan@tencent.com)
 
-#include "paralgo/mapreduce_lite/socket_communicator.h"
+#include "src/mapreduce_lite/socket_communicator.h"
 
 #include <algorithm>  // min()
 
-#include "paralgo/base/stl-util.h"
-#include "paralgo/strutil/split_string.h"
+#include "src/base/stl-util.h"
+#include "src/strutil/split_string.h"
 
 namespace mapreduce_lite {
 

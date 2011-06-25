@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #ifndef SYSTEM_SCOPED_LOCKER_H_
 #define SYSTEM_SCOPED_LOCKER_H_
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 template <typename LockType>
 class ScopedLocker {

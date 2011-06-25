@@ -20,10 +20,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <map>
 #include <string>
 
-#include "paralgo/base/random.h"
+#include "src/base/random.h"
 #include "gtest/gtest.h"
-#include "paralgo/sorted_buffer/sorted_buffer_iterator.h"
-#include "paralgo/sorted_buffer/sorted_buffer.h"
+#include "src/sorted_buffer/sorted_buffer_iterator.h"
+#include "src/sorted_buffer/sorted_buffer.h"
 
 using std::map;
 using std::string;

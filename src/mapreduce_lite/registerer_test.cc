@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <string>
 
 #include "gtest/gtest.h"
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
 
 using mapreduce_lite::Mapper;
 using mapreduce_lite::IncrementalReducer;

@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <sys/socket.h>
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 namespace mapreduce_lite {
 

@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2011 Tencent Inc.
 // Author: YAN Hao (charlieyan@tencent.com)
 
-#include "paralgo/mapreduce_lite/socket_communicator.h"
+#include "src/mapreduce_lite/socket_communicator.h"
 
 #include <unistd.h>
 #include <iostream>
@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <vector>
 
 #include "gtest/gtest.h"
-#include "paralgo/strutil/split_string.h"
+#include "src/strutil/split_string.h"
 
 using std::cout;
 using std::endl;
