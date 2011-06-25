@@ -17,9 +17,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2011 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 
-#include "paralgo/system/filepattern.h"
+#include "src/system/filepattern.h"
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 FilepatternMatcher::FilepatternMatcher(const std::string& filepattern) {
   glob_return_ = glob(filepattern.c_str(),

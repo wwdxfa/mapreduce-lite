@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 uint64 MD5Hash(const unsigned char *s, const unsigned int len);
 uint64 MD5Hash(const std::string& s);

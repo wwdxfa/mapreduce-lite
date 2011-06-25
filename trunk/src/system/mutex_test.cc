@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //   trunk/src/common/system/concurrency/mutex_test.cpp
 //
 #include "gtest/gtest.h"
-#include "paralgo/system/mutex.h"
+#include "src/system/mutex.h"
 
 TEST(Mutex, Lock) {
   Mutex mutex;

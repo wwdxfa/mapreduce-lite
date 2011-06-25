@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gtest/gtest.h"
 
-#include "paralgo/sorted_buffer/sorted_buffer.h"
+#include "src/sorted_buffer/sorted_buffer.h"
 
 namespace sorted_buffer {
 

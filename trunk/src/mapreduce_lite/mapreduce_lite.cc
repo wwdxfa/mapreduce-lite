@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
 
 #include <stdio.h>
 
@@ -29,21 +29,21 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "boost/filesystem.hpp"
 
-#include "paralgo/base/common.h"
-#include "paralgo/base/scoped_ptr.h"
-#include "paralgo/base/stl-util.h"
+#include "src/base/common.h"
+#include "src/base/scoped_ptr.h"
+#include "src/base/stl-util.h"
 #include "gflags/gflags.h"
-#include "paralgo/hash/simple_hash.h"
-#include "paralgo/mapreduce_lite/socket_communicator.h"
-#include "paralgo/mapreduce_lite/flags.h"
-#include "paralgo/mapreduce_lite/protofile.h"
-#include "paralgo/mapreduce_lite/reader.h"
+#include "src/hash/simple_hash.h"
+#include "src/mapreduce_lite/socket_communicator.h"
+#include "src/mapreduce_lite/flags.h"
+#include "src/mapreduce_lite/protofile.h"
+#include "src/mapreduce_lite/reader.h"
 #include "google/protobuf/message.h"
-#include "paralgo/sorted_buffer/sorted_buffer.h"
-#include "paralgo/sorted_buffer/sorted_buffer.cc"
-#include "paralgo/strutil/join_strings.h"
-#include "paralgo/strutil/stringprintf.h"
-#include "paralgo/system/filepattern.h"
+#include "src/sorted_buffer/sorted_buffer.h"
+#include "src/sorted_buffer/sorted_buffer.cc"
+#include "src/strutil/join_strings.h"
+#include "src/strutil/stringprintf.h"
+#include "src/system/filepattern.h"
 
 
 CLASS_REGISTER_IMPLEMENT_REGISTRY(mapreduce_lite_mapper_registry,

@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <stdio.h>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 inline FILE* OpenFileOrDie(const char* filename, const char* mode) {
   FILE* input_stream = fopen(filename, mode);

@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2011 Tencent Inc.
 // Author: YAN Hao (charlieyan@tencent.com)
 
-#include "paralgo/mapreduce_lite/signaling_queue.h"
+#include "src/mapreduce_lite/signaling_queue.h"
 
 #include <string>
 #include "gtest/gtest.h"

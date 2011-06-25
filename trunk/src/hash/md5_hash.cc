@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <string.h>
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 typedef unsigned char md5_byte_t;  /* 8-bit byte */
 typedef unsigned int md5_word_t;   /* 32-bit word */

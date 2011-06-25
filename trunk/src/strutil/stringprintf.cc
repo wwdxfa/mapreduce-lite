@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // (http://code.google.com/p/re2/), in particular, the following source file
 // http://code.google.com/p/re2/source/browse/util/stringprintf.cc
 
-#include "paralgo/strutil/stringprintf.h"
+#include "src/strutil/stringprintf.h"
 
 #include <stdarg.h>
 #include <stdio.h>

@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //   trunk/src/common/system/concurrency/condition_variable_test.cpp
 //
 #include "gtest/gtest.h"
-#include "paralgo/system/condition_variable.h"
+#include "src/system/condition_variable.h"
 
 TEST(ConditionVariable, Init) {
     ConditionVariable cond;

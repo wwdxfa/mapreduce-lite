@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Author: Yi Wang (yiwang@tencent.com)
 //         Hangjun Ye (hansye@tencent.com)
 
-#include "paralgo/base/class_register_test_helper.h"
+#include "src/base/class_register_test_helper.h"
 
 CLASS_REGISTER_IMPLEMENT_REGISTRY(mapper_register, Mapper);
 CLASS_REGISTER_IMPLEMENT_REGISTRY(second_mapper_register, Mapper);

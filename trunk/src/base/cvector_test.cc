@@ -19,8 +19,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //
 #include "gtest/gtest.h"
 
-#include "paralgo/base/common.h"
-#include "paralgo/base/cvector.h"
+#include "src/base/common.h"
+#include "src/base/cvector.h"
 
 class DestructDetector {
  public:

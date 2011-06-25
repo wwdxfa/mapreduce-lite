@@ -41,7 +41,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <string>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 typedef unsigned int (*HashFunction)(const std::string&);
 

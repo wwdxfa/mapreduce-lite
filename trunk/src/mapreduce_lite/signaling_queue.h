@@ -25,9 +25,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <string>
 #include <utility>  // for pair<>
 
-#include "paralgo/base/common.h"
-#include "paralgo/system/condition_variable.h"
-#include "paralgo/system/mutex.h"
+#include "src/base/common.h"
+#include "src/system/condition_variable.h"
+#include "src/system/mutex.h"
 
 namespace mapreduce_lite {
 

@@ -17,9 +17,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010
 // Author: yiwang@tencent.com (Yi Wang)
 //
-#include "paralgo/strutil/split_string.h"
+#include "src/strutil/split_string.h"
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 using std::string;
 using std::vector;

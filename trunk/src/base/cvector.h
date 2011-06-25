@@ -68,7 +68,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <algorithm>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 template <typename Element>
 class CVector {

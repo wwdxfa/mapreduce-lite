@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <sys/epoll.h>
 
-#include "paralgo/base/common.h"
+#include "src/base/common.h"
 
 namespace mapreduce_lite {
 

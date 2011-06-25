@@ -17,12 +17,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/mapreduce_lite/protofile.h"
+#include "src/mapreduce_lite/protofile.h"
 
 #include <string>
 
-#include "paralgo/base/common.h"
-#include "paralgo/mapreduce_lite/protofile.pb.h"
+#include "src/base/common.h"
+#include "src/mapreduce_lite/protofile.pb.h"
 
 namespace mapreduce_lite {
 namespace protofile {

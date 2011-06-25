@@ -152,10 +152,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <boost/program_options/variables_map.hpp>
 #include <boost/program_options/parsers.hpp>
 
-#include "paralgo/base/common.h"
-#include "paralgo/mapreduce_lite/mapreduce_lite.h"
-#include "paralgo/sorted_buffer/sorted_buffer_iterator.h"
-#include "paralgo/strutil/split_string.h"
+#include "src/base/common.h"
+#include "src/mapreduce_lite/mapreduce_lite.h"
+#include "src/sorted_buffer/sorted_buffer_iterator.h"
+#include "src/strutil/split_string.h"
 
 using namespace std;
 using mapreduce_lite::Mapper;

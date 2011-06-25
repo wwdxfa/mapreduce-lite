@@ -26,8 +26,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <stdio.h>
 #include <string>
 
-#include "paralgo/base/class_register.h"
-#include "paralgo/base/scoped_ptr.h"
+#include "src/base/class_register.h"
+#include "src/base/scoped_ptr.h"
 
 namespace mapreduce_lite {
 

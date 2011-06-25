@@ -17,12 +17,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 //
-#include "paralgo/sorted_buffer/sorted_buffer_iterator.h"
+#include "src/sorted_buffer/sorted_buffer_iterator.h"
 
 #include <algorithm>
-#include "paralgo/base/varint32.h"
-#include "paralgo/sorted_buffer/memory_piece.h"
-#include "paralgo/sorted_buffer/sorted_buffer.h"
+#include "src/base/varint32.h"
+#include "src/sorted_buffer/memory_piece.h"
+#include "src/sorted_buffer/sorted_buffer.h"
 
 namespace sorted_buffer {
 

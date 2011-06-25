@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Author: Zhihui Jin (rickjin@tencent.com)
 //         Huan Yu (huanyu@tencent.com)
 //
-#include "paralgo/base/stream_wrapper.h"
+#include "src/base/stream_wrapper.h"
 
 #include <cstring>
 #include <fstream>

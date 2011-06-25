@@ -22,8 +22,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "gtest/gtest.h"
 
-#include "paralgo/base/common.h"
-#include "paralgo/strutil/split_string.h"
+#include "src/base/common.h"
+#include "src/strutil/split_string.h"
 
 TEST(SplitStringTest, SplitStringUsingCompoundDelim) {
   std::string full(" apple \torange ");

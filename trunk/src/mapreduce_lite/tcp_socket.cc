@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: YAN Hao (charlieyan@tencent.com)
 
-#include "paralgo/mapreduce_lite/tcp_socket.h"
+#include "src/mapreduce_lite/tcp_socket.h"
 
 #include <arpa/inet.h>
 #include <fcntl.h>

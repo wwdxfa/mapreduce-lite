@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 *                                                                        *
 **************************************************************************
 */
-#include "paralgo/hash/simple_hash.h"
+#include "src/hash/simple_hash.h"
 
 #include <string>
 

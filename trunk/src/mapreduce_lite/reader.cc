@@ -17,15 +17,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 // Copyright 2010 Tencent Inc.
 // Author: Yi Wang (yiwang@tencent.com)
 
-#include "paralgo/mapreduce_lite/reader.h"
+#include "src/mapreduce_lite/reader.h"
 
 #include <stdio.h>
 #include <string.h>
 
-#include "paralgo/base/common.h"
-#include "paralgo/mapreduce_lite/protofile.h"
-#include "paralgo/mapreduce_lite/utils.h"
-#include "paralgo/strutil/stringprintf.h"
+#include "src/base/common.h"
+#include "src/mapreduce_lite/protofile.h"
+#include "src/mapreduce_lite/utils.h"
+#include "src/strutil/stringprintf.h"
 
 const int kDefaultMaxInputLineLength = 16 * 1024;    // 16 KB
 

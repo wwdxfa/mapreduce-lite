@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //   http://tc-svn.tencent.com/setech/setech_infrastructure_rep/Infra_proj/
 //   trunk/src/common/system/concurrency/condition_variable.cpp
 //
-#include "paralgo/system/condition_variable.h"
+#include "src/system/condition_variable.h"
 
 #include <assert.h>
 #if __unix__

@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #ifndef SORTED_BUFFER_MEMORY_ALLOCATOR_H_
 #define SORTED_BUFFER_MEMORY_ALLOCATOR_H_
 
-#include "paralgo/sorted_buffer/memory_piece.h"
+#include "src/sorted_buffer/memory_piece.h"
 
 namespace sorted_buffer {
 
