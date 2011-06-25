@@ -81,7 +81,7 @@ cd gtest-1.5.0
 make && make install
 ln -s /home/you/3rd-party/gtest-1.5.0 /home/you/3rd-party/gtest
 }}}
-
+GoogleTest 1.6.0 works in a significantly different way than 1.5.0 -- there is no make && make install in 1.6.0, instead, you need to build it together with every of your projects.  We are going to switch to GoogleTest 1.6.0 in the near future.
 
 == Install Boost ==
     We need a recent version of Boost.  Download the source package from http://www.boost.org/users/download/, and
