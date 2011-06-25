@@ -73,8 +73,9 @@ void ParseKey<ProtoMessage>(KeyValuePair* pair, ProtoMessage* msg) {
 template <class KeyType, class ValueType>
 bool ReadRecord(FILE* input_stream, KeyType* key, ValueType* value) {
   uint32 encoded_msg_size;
-  fread(reinterpret_cast<char*>(&encoded_msg_size), sizeof(encoded_msg_size),
-        1, input_stream);
+  CHECK_EQ(fread(reinterpret_cast<char*>(&encoded_msg_size), 
+		 sizeof(encoded_msg_size), 1, input_stream),
+	   1);
   if (feof(input_stream) != 0 || ferror(input_stream) != 0) {
     // Do not LOG(ERROR) here, because users do not want to be
     // bothered when they invoke this function in a loop, e.g.,
@@ -92,7 +93,7 @@ bool ReadRecord(FILE* input_stream, KeyType* key, ValueType* value) {
   }
 
   static char buffer[kMRMLRecordIOMaxRecordSize];
-  fread(buffer, encoded_msg_size, 1, input_stream);
+  CHECK_EQ(fread(buffer, encoded_msg_size, 1, input_stream), 1);
   if (feof(input_stream) != 0 || ferror(input_stream) != 0) {
     LOG(ERROR) << "Error or unexpected EOF in reading protofile.";
     return false;
