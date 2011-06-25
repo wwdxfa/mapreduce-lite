@@ -94,3 +94,18 @@ cd boost_1_44_1
 ./bjam install
 ln -s /home/you/3rd-party/boost-1.44 /home/you/3rd-party/boost
 }}}
+
+
+= Build !MapReduce Lite =
+
+Given above dependencies install, building !MapReduce Lite is easy:
+   # Checkout the code:
+{{{
+svn checkout http://mapreduce-lite.googlecode.com/svn/trunk/ mapreduce-lite-read-only
+}}}
+   # Setup third-party libs:
+   Open `mapreduce-lite-read-only/CMakeLists.txt` in a text editor. Find the line
+{{{
+set(THIRD_PARTY_DIR "/home/yiwang/3rd-party")
+}}}
+   and replace `/home/yiwang/3rd-party` to where you have installed your 3rd-party libraries (referred to as `/home/you/3rd-party` in above section).
