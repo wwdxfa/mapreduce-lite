@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include "src/system/condition_variable.h"
 
 #include <assert.h>
-#if __unix__
+#if defined __unix__ || defined __APPLE__
 #include <sys/time.h>
 #endif
 
@@ -90,7 +90,7 @@ void ConditionVariable::Broadcast() {
   }
 }
 
-#elif defined __unix__
+#elif defined __unix__ || defined __APPLE__
 
 void ConditionVariable::CheckError(const char* context, int error) {
   if (error != 0) {
