@@ -55,7 +55,8 @@ You can also download binary and source packages of CMake from: http://www.cmake
 {{{
 cd protobuf-2.3.0
 ./configure
-make && make install
+make
+sudo make install
 }}}
 
 == Install GFlags ==
