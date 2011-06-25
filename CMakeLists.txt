@@ -10,8 +10,18 @@
 # to package A, you must also have access to all packages on which A
 # depends.
 #
-# To build the whole mapreduce-lite project, you can type the
-# following shell commands:
+# Before you can build mapreduce-lite, you need to build and install
+# dependent libraries following
+#
+#   http://code.google.com/p/mapreduce-lite/wiki/BuildMapReduceLite.
+#
+# This wiki page assumes you installed all 3rd-party libraries into a
+# directory named /home/you/3rd-party.  You need to use that directory
+# to replace the directory in the following variable setting:
+#
+#   set(THIRD_PARTY_DIR "/Users/wangyi/thirdparty")
+#
+# Now, you can build the mapreduce-lite using the following commands:
 #
 #  $> mkdir build
 #  $> cd build
@@ -36,7 +46,7 @@
 #
 project ("mapreduce_lite")
 
-cmake_minimum_required(VERSION 2.8)  # Requires 2.9 for protobuf support.
+cmake_minimum_required(VERSION 2.8)  # Requires 2.8 for protobuf support.
 
 #------------------------------------------------------------------------------
 # Add protobuf compilation support
@@ -60,22 +70,22 @@ set(CMAKE_INSTALL_PREFIX "/home/public/mapreduce-lite")
 #------------------------------------------------------------------------------
 # Ensure executables are statically linked with libraries.
 #------------------------------------------------------------------------------
-set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc")
+if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+  set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc")
+endif()
 
 #------------------------------------------------------------------------------
 # Declare where the third party libraries were installed.
 #------------------------------------------------------------------------------
-set(THIRD_PARTY_DIR "${PROJECT_SOURCE_DIR}/thirdparty")
+set(THIRD_PARTY_DIR "/Users/wangyi/3rd-party")
 
 #------------------------------------------------------------------------------
 # Declare third party libraries we might need.
 # Add new lines below if you installed more 3rd-party libs.
 #------------------------------------------------------------------------------
-set(PROTOBUF_DIR "${THIRD_PARTY_DIR}/protobuf-2.3.0")
-set(BOOST_DIR "${THIRD_PARTY_DIR}/boost-1.43.0")
-set(GFLAGS_DIR "${THIRD_PARTY_DIR}/gflags-1.4")
-set(GTEST_DIR "${THIRD_PARTY_DIR}/gtest-1.5.0")
-set(RE2_DIR "${THIRD_PARTY_DIR}/re2")
+set(BOOST_DIR "${THIRD_PARTY_DIR}/boost")
+set(GFLAGS_DIR "${THIRD_PARTY_DIR}/gflags")
+set(GTEST_DIR "${THIRD_PARTY_DIR}/gtest")
 
 #------------------------------------------------------------------------------
 # Set include paths.
@@ -84,11 +94,10 @@ set(RE2_DIR "${THIRD_PARTY_DIR}/re2")
 include_directories(
   "${PROJECT_SOURCE_DIR}";
   "${PROJECT_BINARY_DIR}";
-  "${PROTOBUF_DIR}/include";
+  "${PROTOBUF_INCLUDE_DIRS}";
   "${BOOST_DIR}/include";
   "${GFLAGS_DIR}/include";
   "${GTEST_DIR}/include";
-  "${RE2_DIR}/include";
   )
 
 #------------------------------------------------------------------------------
@@ -103,11 +112,9 @@ link_directories(
   "${PROJECT_BINARY_DIR}/src/system";
   "${PROJECT_BINARY_DIR}/src/reduce_input";
   "${PROJECT_BINARY_DIR}/src/mapreduce_lite";
-  "${PROTOBUF_DIR}/lib";
   "${BOOST_DIR}/lib";
   "${GFLAGS_DIR}/lib";
   "${GTEST_DIR}/lib";
-  "${RE2_DIR}/lib";
   )
 
 #------------------------------------------------------------------------------
