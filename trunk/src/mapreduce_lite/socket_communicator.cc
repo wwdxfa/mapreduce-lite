@@ -371,7 +371,7 @@ int Connector::Receive() {
   // For each message, receive its size first, then receive its content.
   // Similar with Send(), this_receive is used to record how many bytes have
   // been received this time, and accumulated to bytes_count_.
-  uint32 this_receive = 0;
+  uint this_receive = 0;
   if (bytes_count_ >= sizeof(message_size_) && message_size_ == 0) {
     return 0;
   } else {
@@ -384,8 +384,8 @@ int Connector::Receive() {
   }
 
   if (this_receive > 0) {
-    unsigned long pointer = 0;
-    unsigned long len = 0;
+    uint pointer = 0;
+    uint len = 0;
     while (pointer < this_receive) {
       if (bytes_count_ < sizeof(message_size_)) {
         len = std::min(sizeof(message_size_) - bytes_count_,
