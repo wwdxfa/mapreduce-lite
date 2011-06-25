@@ -25,12 +25,20 @@ FilepatternMatcher::FilepatternMatcher(const std::string& filepattern) {
   glob_return_ = glob(filepattern.c_str(),
                       GLOB_MARK |        // Append a slash to each path which
                                          // corresponds to a directory.
-                      GLOB_TILDE_CHECK | // Carry out tilde expansion.  If
-                                         // the username is invalid, or the
-                                         // home directory cannot be
+#if defined GLOB_TILDE_CHECK && defined GLOB_BRACE
+                      GLOB_TILDE_CHECK | // Carry out tilde
+                                         // expansion.If the username
+                                         // is invalid, or the home
+                                         // directory cannot be
                                          // determined, glob() returns
-                                         // GLOB_NOMATCH to indicate an error.
+                                         // GLOB_NOMATCH to indicate
+                                         // an error.
                       GLOB_BRACE,        // Enable brace expressions.
+#else
+                      0,  // On neither Cygwin, BSD nor Drawin,
+                          // GLOB_TILDE_CHECK and GLOB_BRACE are not
+                          // defined.
+#endif
                       FilepatternMatcher::ErrorFunc,
                       &glob_result_);
 
