@@ -110,7 +110,6 @@ link_directories(
   "${PROJECT_BINARY_DIR}/src/strutil";
   "${PROJECT_BINARY_DIR}/src/hash";
   "${PROJECT_BINARY_DIR}/src/system";
-  "${PROJECT_BINARY_DIR}/src/reduce_input";
   "${PROJECT_BINARY_DIR}/src/mapreduce_lite";
   "${BOOST_DIR}/lib";
   "${GFLAGS_DIR}/lib";
