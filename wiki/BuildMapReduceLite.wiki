@@ -4,7 +4,9 @@
 
 = Introduction =
 
-!MapReduce Lite can be built and run on Linux, MacOS X and Cygwin.
+!MapReduce Lite can be built and run on a modern Linux system (with kernel version >= 2.6).  
+
+Currently, the use of Linux-specific system call, [linux.die.net/man/4/epoll epoll], prevents !MapReduce Lite from being built on MacOS X and Cygwin.  We are trying to use libevent to replace epoll (see [http://code.google.com/p/mapreduce-lite/issues/detail?id=2 this issue]).
 
 = Build/Install Dependencies =
 
