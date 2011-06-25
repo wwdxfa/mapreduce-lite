@@ -65,7 +65,7 @@ add_definitions(" -Wall -Wno-sign-compare -Werror -O2 ")
 #------------------------------------------------------------------------------
 # Declare where our project will be installed.
 #------------------------------------------------------------------------------
-set(CMAKE_INSTALL_PREFIX "/home/public/mapreduce-lite")
+set(CMAKE_INSTALL_PREFIX "/home/yiwang/mapreduce-lite")
 
 #------------------------------------------------------------------------------
 # Ensure executables are statically linked with libraries.
@@ -77,7 +77,7 @@ endif()
 #------------------------------------------------------------------------------
 # Declare where the third party libraries were installed.
 #------------------------------------------------------------------------------
-set(THIRD_PARTY_DIR "/Users/wangyi/3rd-party")
+set(THIRD_PARTY_DIR "/home/yiwang/3rd-party")
 
 #------------------------------------------------------------------------------
 # Declare third party libraries we might need.
