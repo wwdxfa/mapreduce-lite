@@ -1,20 +1,20 @@
-= How to Build !MapReduce-Lite =
+<wiki:toc max_depth="2" />
 
 == On Ubuntu 13.04 x86_64 ==
 
-=== Install Development Tools ===
+Install Development Tools
 
 {{{
 sudo apt-get install subversion gcc g++ cmake
 }}}
 
-=== Checkout Source Code ===
+Checkout Source Code
 
 {{{
 svn checkout http://mapreduce-lite.googlecode.com/svn/trunk/ mapreduce-lite
 }}}
 
-=== Install Prerequisite Packages ===
+Install Prerequisite Packages
 
 {{{
 sudo apt-get install libprotobuf-dev protobuf-compiler libgflags-dev libboost1.53-dev libboost-program-options1.53-dev libboost-regex1.53-dev libboost-filesystem1.53-dev libboost-system1.53-dev libboost-thread1.53-dev libgtest-dev
@@ -31,7 +31,7 @@ file:
 add_subdirectory(/usr/src/gtest ${CMAKE_CURRENT_BINARY_DIR}/gtest)
 }}}
 
-=== Build !MapReduce-Lite ===
+Build !MapReduce-Lite
 
 {{{
 mkdir build
@@ -48,7 +48,7 @@ can edit the following line in `mapreduce-lite/CMakeLists.txt`:
 set(CMAKE_INSTALL_PREFIX "/home/wyi/mapreduce-lite")
 }}}
 
-=== Check Result ===
+Check Result
 
 !MapReduce-Lite programs should be statistically linked, so they can be
 easily deployed on a computer cluster with the bothering from shared
@@ -62,3 +62,4 @@ ldd /home/wyi/mapreduce-lite/mrlite-demo/mrl-wordcount
 
 If you see and output like `not a dynamic executable`,
 congratulations! you got a statically linked binary.
+
