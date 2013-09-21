@@ -343,13 +343,12 @@ int Connector::Send() {
     }
   }
 
-  // For each message, send message size first, then send the
-  // content of this message.
-  // Because sock_->Send() may actually send only part of data in the given
-  // buffer, this_send is used to record how many byte have been sent each time,
-  // and accumulated to bytes_count_.
-  // So, when (bytes_count_ < sizeof(message_size_)), we continue to send
-  // message_size_, else, send message_.data()
+  // For each message, send message size first, then send the content
+  // of this message.  Because sock_->Send() may actually send only
+  // part of data in the given buffer, this_send is used to record how
+  // many byte have been sent each time, and accumulated to
+  // bytes_count_.  So, when (bytes_count_ < sizeof(message_size_)),
+  // we continue to send message_size_, else, send message_.data()
   uint32 this_send = 0;
   this_send = sock_->Send(message_.data() + bytes_count_,
                           message_.size() - bytes_count_);
@@ -371,7 +370,7 @@ int Connector::Receive() {
   // For each message, receive its size first, then receive its content.
   // Similar with Send(), this_receive is used to record how many bytes have
   // been received this time, and accumulated to bytes_count_.
-  uint this_receive = 0;
+  size_t this_receive = 0;
   if (bytes_count_ >= sizeof(message_size_) && message_size_ == 0) {
     return 0;
   } else {
@@ -384,8 +383,8 @@ int Connector::Receive() {
   }
 
   if (this_receive > 0) {
-    uint pointer = 0;
-    uint len = 0;
+    size_t pointer = 0;
+    size_t len = 0;
     while (pointer < this_receive) {
       if (bytes_count_ < sizeof(message_size_)) {
         len = std::min(sizeof(message_size_) - bytes_count_,

@@ -65,7 +65,7 @@ add_definitions(" -Wall -Wno-sign-compare -Werror -O2 ")
 #------------------------------------------------------------------------------
 # Declare where our project will be installed.
 #------------------------------------------------------------------------------
-set(CMAKE_INSTALL_PREFIX "/home/yiwang/mapreduce-lite")
+set(CMAKE_INSTALL_PREFIX "/home/wyi/mapreduce-lite")
 
 #------------------------------------------------------------------------------
 # Ensure executables are statically linked with libraries.
@@ -77,7 +77,7 @@ endif()
 #------------------------------------------------------------------------------
 # Declare where the third party libraries were installed.
 #------------------------------------------------------------------------------
-set(THIRD_PARTY_DIR "/home/yiwang/3rd-party")
+set(THIRD_PARTY_DIR "/home/wyi/3rd-party")
 
 #------------------------------------------------------------------------------
 # Declare third party libraries we might need.
@@ -120,6 +120,17 @@ link_directories(
 # Declare packages in paralgo project.
 # Add new lines below if you add new packages in mapreduce-lite project.
 #------------------------------------------------------------------------------
+
+# This line works if you install gtest source code using
+# Debian/Ubuntu's package manager (sudo apt-get install libgtest-dev).
+# As this would install the source code of gtest into /usr/src/gtest,
+# and there is a CMakeLists.txt there describing how you can build
+# gtest source code using CMake, we can simply refers to it in our own
+# CMakeLists.txt file.  If you download gtest source file by yourself
+# and to somewhere else than /usr/src/gtest, simply change the
+# directory in the following line.
+add_subdirectory(/usr/src/gtest ${CMAKE_CURRENT_BINARY_DIR}/gtest)
+
 add_subdirectory(src/base)
 add_subdirectory(src/strutil)
 add_subdirectory(src/hash)
