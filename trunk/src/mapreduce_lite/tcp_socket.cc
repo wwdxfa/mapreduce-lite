@@ -25,6 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include <netinet/in.h>
 #include <pthread.h>
 #include <sys/socket.h>
+#include <unistd.h>
 
 namespace mapreduce_lite {
 

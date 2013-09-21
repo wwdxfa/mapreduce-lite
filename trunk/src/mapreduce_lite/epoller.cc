@@ -19,6 +19,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include "src/mapreduce_lite/epoller.h"
 
+#include <unistd.h>
+
 namespace mapreduce_lite {
 
 Epoller::Epoller(int epoll_size) {
