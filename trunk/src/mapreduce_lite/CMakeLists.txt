@@ -2,9 +2,9 @@
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS protofile.proto)
 
 # Build library mapreduce_lite.
-add_library(mapreduce_lite ${PROTO_SRCS} epoller.cc flags.cc mapreduce_lite.cc mapreduce_main.cc protofile.cc reader.cc signaling_queue.cc socket_communicator.cc tcp_socket.cc)
+add_library(mapreduce_lite ${PROTO_SRCS} flags.cc mapreduce_lite.cc mapreduce_main.cc protofile.cc reader.cc signaling_queue.cc socket_communicator.cc tcp_socket.cc)
 
-set(LIBS mapreduce_lite sorted_buffer strutil hash base protobuf system gflags gtest boost_thread boost_filesystem boost_system pthread)
+set(LIBS mapreduce_lite sorted_buffer strutil hash base event_core rt protobuf system gflags gtest boost_thread boost_filesystem boost_system pthread)
 
 # Build unittests.
 add_executable(protofile_test protofile_test.cc)

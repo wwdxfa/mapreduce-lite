@@ -86,6 +86,7 @@ set(THIRD_PARTY_DIR "/home/wyi/3rd-party")
 set(BOOST_DIR "${THIRD_PARTY_DIR}/boost")
 set(GFLAGS_DIR "${THIRD_PARTY_DIR}/gflags")
 set(GTEST_DIR "${THIRD_PARTY_DIR}/gtest")
+set(LIBEVENT_DIR "${THIRD_PARTY_DIR}/libevent")
 
 #------------------------------------------------------------------------------
 # Set include paths.
@@ -98,6 +99,7 @@ include_directories(
   "${BOOST_DIR}/include";
   "${GFLAGS_DIR}/include";
   "${GTEST_DIR}/include";
+  "${LIBEVENT_DIR}/include";
   )
 
 #------------------------------------------------------------------------------
@@ -114,6 +116,7 @@ link_directories(
   "${BOOST_DIR}/lib";
   "${GFLAGS_DIR}/lib";
   "${GTEST_DIR}/lib";
+  "${LIBEVENT_DIR}/lib";
   )
 
 #------------------------------------------------------------------------------

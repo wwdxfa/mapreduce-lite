@@ -27,7 +27,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 #include "src/base/scoped_ptr.h"
 #include "boost/thread.hpp"
 #include "src/mapreduce_lite/communicator.h"
-#include "src/mapreduce_lite/epoller.h"
 #include "src/mapreduce_lite/signaling_queue.h"
 #include "src/mapreduce_lite/tcp_socket.h"
 
