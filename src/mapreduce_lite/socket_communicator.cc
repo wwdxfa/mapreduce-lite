@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 #include <algorithm>  // min()
 
+#include "event2/event.h"
 #include "src/base/stl-util.h"
 #include "src/strutil/split_string.h"
 
@@ -205,86 +206,102 @@ bool SocketCommunicator::FinalizeReceiver() {
   return true;
 }
 
-/*static*/
-void SocketCommunicator::SendLoop(SocketCommunicator *comm) {
-  // register all sockets: EPOLLOUT
-  Epoller epoller(comm->num_receiver_);
-  for (int i = 0; i < comm->num_receiver_; ++i) {
-    CHECK(epoller.Register(comm->sockets_[i]->Socket(), EPOLLOUT));
+struct CallbackArg {
+  Connector *connector;
+  int *connection_counter;
+  struct event_base *base;
+};
+
+void SendCallback(evutil_socket_t fd,
+                  short event_type /* type of event */,
+                  void *arg) {
+  CallbackArg *cb_arg = static_cast<CallbackArg*>(arg);
+  Connector *con = cb_arg->connector;
+  int retval = con->Send();
+  CHECK_LE(0, retval);
+  if (0 == retval) {
+    --*(cb_arg->connection_counter);
   }
 
-  // event loop:
-  // for EPOLLOUT, send message
-  // for EPOLLHUP | EPOLLERR, LOG(FATAL)
+  if (*(cb_arg->connection_counter) == 0) {
+    event_base_loopexit(cb_arg->base, NULL);
+  }
+}
+
+/*static*/
+void SocketCommunicator::SendLoop(SocketCommunicator *comm) {
+  int connection_counter = comm->num_receiver_;
+  struct event_base *base = event_base_new();
+  vector<struct event *> events(comm->num_receiver_);
+  vector<struct CallbackArg *> cb_args(comm->num_receiver_);
+
   vector<Connector> connectors;
   connectors.resize(comm->num_receiver_);
   for (int i = 0; i < comm->num_receiver_; ++i) {
     connectors[i].Initialize(comm->send_buffers_[i], comm->sockets_[i]);
+    cb_args[i] = new(CallbackArg);
+    cb_args[i]->connector = &connectors[i];
+    cb_args[i]->connection_counter = &connection_counter;
+    cb_args[i]->base = base;
+    events[i] = event_new(base, comm->sockets_[i]->Socket(),
+                          EV_WRITE | EV_PERSIST , SendCallback, cb_args[i]);
+    event_add(events[i], NULL);
   }
 
-  struct epoll_event events[comm->num_receiver_];
-  while (comm->socket_id_.size()) {
-    int num_events = epoller.Poll(events, comm->num_receiver_);
-    CHECK_LE(0, num_events);
-    for (int i = 0; i < num_events; ++i) {
-      int id = comm->socket_id_[events[i].data.fd];
-      if (events[i].events & EPOLLOUT) {
-        Connector &con = connectors[id];
-        int retval = con.Send();
-        CHECK_LE(0, retval);
-        if (0 == retval) {  // no more data in this queue
-          comm->socket_id_.erase(events[i].data.fd);
-          comm->sockets_[id]->ShutDown(SHUT_WR);
-          epoller.Unregister(events[i].data.fd);
-        }
-      } else if (events[i].events & EPOLLHUP) {
-        LOG(FATAL) << "Unexpected disconnection from reducer " << id;
-      } else if (events[i].events & EPOLLERR) {
-        LOG(FATAL) << "Socket error from reducer " << id;
-      }
-    }
+  event_base_dispatch(base);
+
+  for (int i = 0; i < comm->num_receiver_; ++i) {
+    comm->sockets_[i]->ShutDown(SHUT_WR);
+    delete(cb_args[i]);
+    event_free(events[i]);
+  }
+  event_base_free(base);
+}
+
+void ReceiveCallback(evutil_socket_t fd,
+                     short event_type /* type of event */,
+                     void *arg) {
+  CallbackArg *cb_arg = static_cast<CallbackArg*>(arg);
+  Connector *con = cb_arg->connector;
+  int retval = con->Receive();
+  CHECK_LE(0, retval);
+  if (0 == retval) {
+    --*(cb_arg->connection_counter);
+  }
+
+  if (*(cb_arg->connection_counter) == 0) {
+    event_base_loopexit(cb_arg->base, NULL);
   }
 }
 
 /*static*/
 void SocketCommunicator::ReceiveLoop(SocketCommunicator *comm) {
-  // register all sockets: EPOLLIN
-  Epoller epoller(comm->num_sender_);
-  for (int i = 0; i < comm->num_sender_; ++i) {
-    CHECK(epoller.Register(comm->sockets_[i]->Socket(), EPOLLIN));
-  }
+  int connection_counter = comm->num_sender_;
+  struct event_base *base = event_base_new();
+  vector<struct event *> events(comm->num_sender_);
+  vector<struct CallbackArg *> cb_args(comm->num_receiver_);
 
-  // event loop:
-  // for EPOLLIN, receive message
-  // for EPOLLHUP | EPOLLERR, close socket
   vector<Connector> connectors;
   connectors.resize(comm->num_sender_);
   for (int i = 0; i < comm->num_sender_; ++i) {
     connectors[i].Initialize(comm->receive_buffer_.get(), comm->sockets_[i]);
+    cb_args[i] = new(CallbackArg);
+    cb_args[i]->connector = &connectors[i];
+    cb_args[i]->connection_counter = &connection_counter;
+    cb_args[i]->base = base;
+    events[i] = event_new(base, comm->sockets_[i]->Socket(),
+                          EV_READ | EV_PERSIST , ReceiveCallback, cb_args[i]);
+    event_add(events[i], NULL);
   }
 
-  struct epoll_event events[comm->num_sender_];
-  while (comm->socket_id_.size()) {
-    int num_events = epoller.Poll(events, comm->num_sender_);
-    CHECK_LE(0, num_events);
-    for (int i = 0; i < num_events; ++i) {
-      int id = comm->socket_id_[events[i].data.fd];
-      if (events[i].events & EPOLLIN) {
-        Connector &con = connectors[id];
-        int retval = con.Receive();
-        CHECK_LE(0, retval);
-        if (0 == retval) {  // no more messages from this socket
-          comm->socket_id_.erase(events[i].data.fd);
-          comm->sockets_[id]->Close();
-          epoller.Unregister(events[i].data.fd);
-        }
-      } else if (events[i].events & EPOLLHUP) {
-        LOG(FATAL) << "Unexpected disconnection from mapper " << id;
-      } else if (events[i].events & EPOLLERR) {
-        LOG(FATAL) << "Socket error from mapper " << id;
-      }
-    }
+  event_base_dispatch(base);
+
+  for (int i = 0; i < comm->num_receiver_; ++i) {
+    comm->sockets_[i]->Close();
+    delete(cb_args[i]);
+    event_free(events[i]);
   }
+  event_base_free(base);
   comm->receive_buffer_->Signal(0);
 }
 
