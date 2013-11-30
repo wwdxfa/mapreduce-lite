@@ -93,13 +93,13 @@ set(LIBEVENT_DIR "${THIRD_PARTY_DIR}/libevent")
 # Add new lines below if you installed more 3rd-party libs.
 #------------------------------------------------------------------------------
 include_directories(
-  "${PROJECT_SOURCE_DIR}";
-  "${PROJECT_BINARY_DIR}";
-  "${PROTOBUF_INCLUDE_DIRS}";
-  "${BOOST_DIR}/include";
-  "${GFLAGS_DIR}/include";
-  "${GTEST_DIR}/include";
-  "${LIBEVENT_DIR}/include";
+  "${PROJECT_SOURCE_DIR}"
+  "${PROJECT_BINARY_DIR}"
+  "${PROTOBUF_INCLUDE_DIRS}"
+  "${BOOST_DIR}/include"
+  "${GFLAGS_DIR}/include"
+  "${GTEST_DIR}/include"
+  "${LIBEVENT_DIR}/include"
   )
 
 #------------------------------------------------------------------------------
@@ -108,15 +108,15 @@ include_directories(
 # installed more 3rd-party libs.
 #------------------------------------------------------------------------------
 link_directories(
-  "${PROJECT_BINARY_DIR}/src/base";
-  "${PROJECT_BINARY_DIR}/src/strutil";
-  "${PROJECT_BINARY_DIR}/src/hash";
-  "${PROJECT_BINARY_DIR}/src/system";
-  "${PROJECT_BINARY_DIR}/src/mapreduce_lite";
-  "${BOOST_DIR}/lib";
-  "${GFLAGS_DIR}/lib";
-  "${GTEST_DIR}/lib";
-  "${LIBEVENT_DIR}/lib";
+  "${PROJECT_BINARY_DIR}/src/base"
+  "${PROJECT_BINARY_DIR}/src/strutil"
+  "${PROJECT_BINARY_DIR}/src/hash"
+  "${PROJECT_BINARY_DIR}/src/system"
+  "${PROJECT_BINARY_DIR}/src/mapreduce_lite"
+  "${BOOST_DIR}/lib"
+  "${GFLAGS_DIR}/lib"
+  "${GTEST_DIR}/lib"
+  "${LIBEVENT_DIR}/lib"
   )
 
 #------------------------------------------------------------------------------
